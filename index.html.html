@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>ELITE FC</title>
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial,sans-serif;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    background:#000;
+    color:#fff;
+}
+
+header{
+    position:fixed;
+    width:100%;
+    top:0;
+    left:0;
+    padding:20px 50px;
+    background:#111;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.logo{
+    font-size:30px;
+    font-weight:bold;
+}
+
+nav a{
+    color:#fff;
+    text-decoration:none;
+    margin-left:20px;
+}
+
+.hero{
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    flex-direction:column;
+    text-align:center;
+}
+
+.hero img{
+    width:220px;
+    margin-bottom:30px;
+}
+
+.hero h1{
+    font-size:70px;
+}
+
+.hero p{
+    color:#cccccc;
+    margin-top:10px;
+}
+
+.botao{
+    margin-top:30px;
+    padding:15px 30px;
+    border:2px solid white;
+    border-radius:10px;
+    text-decoration:none;
+    color:white;
+}
+
+.section{
+    padding:100px 10%;
+}
+
+.cards{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:20px;
+}
+
+.card{
+    background:#111;
+    padding:25px;
+    border-radius:15px;
+    text-align:center;
+}
+
+.social{
+    text-align:center;
+}
+
+.social a{
+    color:white;
+    font-size:35px;
+    margin:20px;
+}
+
+footer{
+    background:#111;
+    padding:30px;
+    text-align:center;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+
+<div class="logo">ELITE FC</div>
+
+<nav>
+<a href="#inicio">Início</a>
+<a href="#jogadores">Elenco</a>
+<a href="#partidas">Partidas</a>
+<a href="#redes">Redes</a>
+</nav>
+
+</header>
+
+<section class="hero" id="inicio">
+
+<img src="escudo.png">
+
+<h1>ELITE FC</h1>
+
+<p>Copa Araucária 2026</p>
+
+<a class="botao" href="#jogadores">
+Ver elenco
+</a>
+
+</section>
+
+<section class="section" id="jogadores">
+
+<h2>Elenco</h2>
+
+<br><br>
+
+<div class="cards">
+
+<div class="card">
+<h3>1. Wilden Farias</h3>
+<p>Meia</p>
+</div>
+
+<div class="card">
+<h3>2. Jose Sandoval</h3>
+<p>Ponta direita</p>
+</div>
+
+<div class="card">
+<h3>3. Renan da Cruz Sousa</h3>
+<p>Zagueiro</p>
+</div>
+
+<div class="card">
+<h3>4. Felix Sandoval</h3>
+<p>Lateral direito</p>
+</div>
+
+<div class="card">
+<h3>5. Luiz Tavares</h3>
+<p>Meia</p>
+</div>
+
+<div class="card">
+<h3>6. Nicolas Ferreira de Abreu</h3>
+<p>Volante</p>
+</div>
+
+<div class="card">
+<h3>7. Salminho Alves</h3>
+<p>Atacante</p>
+</div>
+
+<div class="card">
+<h3>8. Victor da Silva</h3>
+<p>Ponta esquerda</p>
+</div>
+
+<div class="card">
+<h3>9. Kenzo Marques</h3>
+<p>Lateral esquerdo</p>
+</div>
+
+<div class="card">
+<h3>10. João Rocha</h3>
+<p>Zagueiro</p>
+</div>
+
+<div class="card">
+<h3>11. Brayan de Oliveira</h3>
+<p>Goleiro</p>
+</div>
+
+<div class="card">
+<h3>12. Hendruys de Oliveira</h3>
+<p>Atacante</p>
+</div>
+
+<div class="card">
+<h3>13. Luan Murilo</h3>
+<p>Lateral esquerdo</p>
+</div>
+
+<div class="card">
+<h3>14. Brayan Cardoso</h3>
+<p>Goleiro</p>
+</div>
+
+</div>
+
+</section>
+
+<section class="section" id="partidas">
+
+<h2>Próxima partida</h2>
+
+<br><br>
+
+<div class="card">
+
+<h3>ELITE FC x NA BRISA FC</h3>
+
+<br>
+
+<p>📅 8 de agosto</p>
+<p>🕑 14:00</p>
+<p>📍 Campo CSU</p>
+
+</div>
+
+</section>
+
+<section class="section social" id="redes">
+
+<h2>Siga-nos</h2>
+
+<br>
+
+<i class="fa-brands fa-instagram"></i>
+
+<br><br>
+
+<p>@elite_fcel</p>
+
+<br>
+
+<i class="fa-brands fa-youtube"></i>
+
+<br><br>
+
+<p>elite_fcel</p>
+
+</section>
+
+<footer>
+
+<p>⚫⚪ ELITE FC ⚫⚪</p>
+
+<p>Uma família, um escudo, um objetivo.</p>
+
+</footer>
+
+</body>
+</html>
