@@ -189,3 +189,25 @@ button {
 button:hover {
     transform: scale(1.03);
 }
+.botao-patrocinador {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 15px 30px;
+
+    border-radius: 10px;
+
+    background: #ffffff;
+    color: #000000;
+
+    text-decoration: none;
+
+    transition: 0.3s;
+}
+
+.botao-patrocinador:hover {
+    transform: scale(1.05);
+}
+
+#patrocinadores {
+    text-align: center;
+}
