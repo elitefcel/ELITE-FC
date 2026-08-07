@@ -211,3 +211,53 @@ button:hover {
 #patrocinadores {
     text-align: center;
 }
+#patrocinadores {
+    text-align: center;
+}
+
+.botao-patrocinador {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 15px 30px;
+
+    background: #ffffff;
+    color: #000000;
+
+    border-radius: 10px;
+
+    text-decoration: none;
+
+    transition: 0.3s;
+}
+
+.botao-patrocinador:hover {
+    transform: scale(1.05);
+}
+.galeria {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.foto {
+    height: 200px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    border-radius: 15px;
+
+    background: #111;
+    border: 1px solid #222;
+
+    transition: 0.3s;
+}
+
+.foto:hover {
+    transform: scale(1.03);
+}
+
+.foto p {
+    color: #888;
+}
