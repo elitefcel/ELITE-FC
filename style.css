@@ -152,3 +152,40 @@ button {
 
     cursor: pointer;
 }
+form {
+    max-width: 600px;
+    margin: auto;
+
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+input,
+select,
+textarea {
+    padding: 15px;
+    border: none;
+    border-radius: 10px;
+
+    background: #111;
+    color: white;
+}
+
+button {
+    padding: 15px;
+
+    border: none;
+    border-radius: 10px;
+
+    background: white;
+    color: black;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+button:hover {
+    transform: scale(1.03);
+}
