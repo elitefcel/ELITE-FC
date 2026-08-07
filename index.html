@@ -1,225 +1,147 @@
-<header>
+<!DOCTYPE html>
+<html lang="pt-BR">
 
-    <nav>
-        <a href="#inicio">Início</a>
-        <a href="#jogadores">Elenco</a>
-        <a href="#partidas">Partidas</a>
-        <a href="#vagas">Vagas</a>
-        <a href="#amistosos">Amistosos</a>
-        <a href="#redes">Redes</a>
-    </nav>
+<head>
 
-</header>
+    <meta charset="UTF-8">
 
-<section class="hero" id="inicio">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
 
-    <h1>ELITE FC</h1>
+    <title>ELITE FC</title>
 
-    <p>Uma família, um escudo, um objetivo.</p>
+    <link rel="stylesheet" href="style.css">
 
-    <a class="botao" href="#jogadores">
-        Ver elenco
-    </a>
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
 
-</section>
-<section class="section" id="vagas">
+</head>
 
-    <h2>Vagas disponíveis</h2>
+<body>
 
-    <br><br>
+    <header>
 
-    <div class="cards">
+        <nav>
 
-        <div class="card">
-            <h3>⚽ Ponta direita</h3>
-            <p>Entre em contato pelo Instagram.</p>
-        </div>
+            <a href="#inicio">Início</a>
+            <a href="#jogadores">Elenco</a>
+            <a href="#partidas">Partidas</a>
+            <a href="#vagas">Vagas</a>
+            <a href="#amistosos">Amistosos</a>
+            <a href="#redes">Redes</a>
 
-        <div class="card">
-            <h3>⚽ Zagueiro</h3>
-            <p>Entre em contato pelo Instagram.</p>
-        </div>
+        </nav>
 
-        <div class="card">
-            <h3>⚽ Volante</h3>
-            <p>Entre em contato pelo Instagram.</p>
-        </div>
+    </header>
 
-    </div>
+    <section class="hero" id="inicio">
 
-</section>
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family:Arial,sans-serif;
-}
+        <h1>ELITE FC</h1>
 
-html{
-    scroll-behavior:smooth;
-}
+        <p>Uma família, um escudo, um objetivo.</p>
 
-body{
-    background:linear-gradient(-45deg,#000,#111,#1a1a1a);
-    background-size:400% 400%;
-    animation:fundo 10s ease infinite;
-    color:#fff;
-}
-
-@keyframes fundo{
-    0%{
-        background-position:0% 50%;
-    }
-
-    50%{
-        background-position:100% 50%;
-    }
-
-    100%{
-        background-position:0% 50%;
-    }
-}
-
-header{
-    position:fixed;
-    width:100%;
-    top:0;
-    left:0;
-    padding:20px 50px;
-    background:#111;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    z-index:1000;
-}
-
-nav a{
-    color:#fff;
-    text-decoration:none;
-    margin-left:20px;
-    position:relative;
-}
-
-nav a::after{
-    content:"";
-    position:absolute;
-    width:0;
-    height:2px;
-    background:#fff;
-    left:0;
-    bottom:-5px;
-    transition:0.3s;
-}
-
-nav a:hover::after{
-    width:100%;
-}
-
-.hero{
-    min-height:100vh;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    flex-direction:column;
-    text-align:center;
-}
-
-.hero h1{
-    font-size:70px;
-    animation:pulsar 2s infinite;
-}
-
-@keyframes pulsar{
-    0%{
-        transform:scale(1);
-    }
-
-    50%{
-        transform:scale(1.03);
-    }
-
-    100%{
-        transform:scale(1);
-    }
-}
-
-.botao{
-    margin-top:30px;
-    padding:15px 30px;
-    border:2px solid white;
-    border-radius:10px;
-    text-decoration:none;
-    color:white;
-    transition:0.3s;
-}
-
-.botao:hover{
-    background:white;
-    color:black;
-    transform:scale(1.05);
-}
-
-.section{
-    padding:100px 10%;
-}
-
-.cards{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-    gap:20px;
-}
-
-.card{
-    background:#111;
-    padding:25px;
-    border-radius:15px;
-    text-align:center;
-    transition:0.3s;
-}
-
-.card:hover{
-    transform:translateY(-10px);
-    box-shadow:0 0 20px rgba(255,255,255,0.2);
-}
-
-.social{
-    text-align:center;
-}
-
-.social a{
-    color:white;
-    font-size:35px;
-    margin:20px;
-    text-decoration:none;
-}
-
-footer{
-    background:#111;
-    padding:30px;
-    text-align:center;
-}
-<section class="section" id="amistosos">
-
-    <h2>Marcar amistosos</h2>
-
-    <br><br>
-
-    <div class="card">
-
-        <h3>Deseja jogar contra o ELITE FC?</h3>
-
-        <br>
-
-        <p>Entre em contato pelo Instagram.</p>
-
-        <br><br>
-
-        <a class="botao"
-           href="https://www.instagram.com/elite_fcel/"
-           target="_blank">
-            Falar conosco
+        <a class="botao" href="#jogadores">
+            Ver elenco
         </a>
 
-    </div>
+    </section>
 
-</section>
+    <section class="section" id="jogadores">
+
+        <h2>Elenco</h2>
+
+        <div class="cards">
+
+            <div class="card">
+                <h3>1. Wilden Farias</h3>
+                <p>Meia</p>
+            </div>
+
+            <div class="card">
+                <h3>2. Jose Sandoval</h3>
+                <p>Ponta direita</p>
+            </div>
+
+            <div class="card">
+                <h3>3. Renan da Cruz Sousa</h3>
+                <p>Zagueiro</p>
+            </div>
+
+        </div>
+
+    </section>
+
+    <section class="section" id="partidas">
+
+        <h2>Próxima partida</h2>
+
+        <div class="card">
+
+            <h3>ELITE FC x NA BRISA FC</h3>
+
+            <p>📅 8 de agosto</p>
+            <p>🕒 15:45</p>
+            <p>📍 Campo CSU</p>
+
+        </div>
+
+    </section>
+
+    <section class="section" id="vagas">
+
+        <h2>Vagas disponíveis</h2>
+
+        <div class="cards">
+
+            <div class="card">
+                <h3>⚽ Zagueiro</h3>
+            </div>
+
+            <div class="card">
+                <h3>⚽ Volante</h3>
+            </div>
+
+        </div>
+
+    </section>
+
+    <section class="section" id="amistosos">
+
+        <h2>Marcar amistosos</h2>
+
+        <div class="card">
+
+            <h3>Deseja jogar contra o ELITE FC?</h3>
+
+            <br>
+
+            <a class="botao"
+               href="https://www.instagram.com/elite_fcel/">
+                Entrar em contato
+            </a>
+
+        </div>
+
+    </section>
+
+    <section class="social" id="redes">
+
+        <h2>Siga-nos</h2>
+
+        <a href="https://www.instagram.com/elite_fcel/">
+            <i class="fa-brands fa-instagram"></i>
+        </a>
+
+    </section>
+
+    <footer>
+
+        <p>⚫⚪ ELITE FC ⚫⚪</p>
+
+    </footer>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
