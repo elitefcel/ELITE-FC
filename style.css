@@ -18,8 +18,8 @@ header {
     position: fixed;
     top: 0;
     width: 100%;
-    padding: 25px 50px;
-    background: rgba(0, 0, 0, 0.95);
+    padding: 20px 50px;
+    background: #111;
 
     display: flex;
     justify-content: space-between;
@@ -27,14 +27,14 @@ header {
 }
 
 .logo {
-    font-size: 35px;
+    font-size: 30px;
     font-weight: bold;
 }
 
 nav a {
     color: white;
     text-decoration: none;
-    margin-left: 25px;
+    margin-left: 20px;
 }
 
 .hero {
@@ -65,34 +65,35 @@ nav a {
 
 .section h2 {
     margin-bottom: 40px;
-    text-align: center;
 }
 
 .cards {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 25px;
+    gap: 20px;
 }
 
 .card {
-    padding: 30px;
+    padding: 25px;
     border-radius: 15px;
     background: #111;
     border: 1px solid #222;
 }
 
-.card h3 {
-    margin-bottom: 10px;
+.card:hover {
+    transform: translateY(-5px);
 }
 
-#partidas .card,
-#amistosos .card {
-    max-width: 500px;
-    margin: auto;
-    text-align: center;
+.categoria {
+    margin-bottom: 50px;
 }
 
 #redes {
     text-align: center;
-    padding-bottom: 100px;
+}
+
+#redes i {
+    font-size: 50px;
+    color: white;
+    margin-bottom: 20px;
 }
