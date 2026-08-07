@@ -33,7 +33,7 @@ formulario.addEventListener("submit", function (evento) {
 ${mensagem}
 `;
 
-    const numero = "55XXXXXXXXXXX";
+    const numero = "41998045779";
 
     const url = `https://wa.me/${numero}?text=${encodeURIComponent(texto)}`;
 
