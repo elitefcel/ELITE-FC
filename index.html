@@ -6,14 +6,11 @@
     <meta charset="UTF-8">
 
     <meta name="viewport"
-          content="width=device-width, initial-scale=1.0">
+        content="width=device-width, initial-scale=1.0">
 
     <title>ELITE FC</title>
 
     <link rel="stylesheet" href="style.css">
-
-    <link rel="stylesheet"
-          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
 
 </head>
 
@@ -21,10 +18,11 @@
 
     <header>
 
+        <div class="logo">ELITE FC</div>
+
         <nav>
 
             <a href="#inicio">Início</a>
-            <a href="#jogadores">Elenco</a>
             <a href="#partidas">Partidas</a>
             <a href="#vagas">Vagas</a>
             <a href="#amistosos">Amistosos</a>
@@ -36,224 +34,16 @@
 
     <section class="hero" id="inicio">
 
+        <img src="img/escudo.png" alt="Escudo do ELITE FC">
+
         <h1>ELITE FC</h1>
 
         <p>Uma família, um escudo, um objetivo.</p>
 
-        <a class="botao" href="#jogadores">
-            Ver elenco
-        </a>
-
     </section>
-
-    <section class="section" id="jogadores">
-
-        <h2>Elenco</h2>
-
-        <div class="cards">
-
-            <div class="card">
-                <h3>1. Wilden Farias</h3>
-                <p>Meia</p>
-            </div>
-
-            <div class="card">
-                <h3>2. Jose Sandoval</h3>
-                <p>Ponta direita</p>
-            </div>
-
-            <div class="card">
-                <h3>3. Renan da Cruz Sousa</h3>
-                <p>Zagueiro</p>
-            </div>
-
-        </div>
-
-    </section>
-
-    <section class="section" id="partidas">
-
-        <h2>Próxima partida</h2>
-
-        <div class="card">
-
-            <h3>ELITE FC x NA BRISA FC</h3>
-
-            <p>📅 8 de agosto</p>
-            <p>🕒 15:45</p>
-            <p>📍 Campo CSU</p>
-
-        </div>
-
-    </section>
-
-    <section class="section" id="vagas">
-
-        <h2>Vagas disponíveis</h2>
-
-        <div class="cards">
-
-            <div class="card">
-                <h3>⚽ Zagueiro</h3>
-            </div>
-
-            <div class="card">
-                <h3>⚽ Volante</h3>
-            </div>
-
-        </div>
-
-    </section>
-
-    <section class="section" id="amistosos">
-
-        <h2>Marcar amistosos</h2>
-
-        <div class="card">
-
-            <h3>Deseja jogar contra o ELITE FC?</h3>
-
-            <br>
-
-            <a class="botao"
-               href="https://www.instagram.com/elite_fcel/">
-                Entrar em contato
-            </a>
-
-        </div>
-
-    </section>
-
-    <section class="social" id="redes">
-
-        <h2>Siga-nos</h2>
-
-        <a href="https://www.instagram.com/elite_fcel/">
-            <i class="fa-brands fa-instagram"></i>
-        </a>
-
-    </section>
-
-    <footer>
-
-        <p>⚫⚪ ELITE FC ⚫⚪</p>
-
-    </footer>
 
     <script src="script.js"></script>
 
 </body>
 
 </html>
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-html {
-    scroll-behavior: smooth;
-}
-
-body {
-    font-family: Arial, sans-serif;
-    background: #000;
-    color: white;
-}
-
-header {
-    position: fixed;
-    width: 100%;
-    background: #111;
-    padding: 20px;
-}
-
-nav {
-    display: flex;
-    justify-content: center;
-}
-
-nav a {
-    color: white;
-    margin: 10px;
-    text-decoration: none;
-}
-
-.hero {
-    min-height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-}
-
-.hero h1 {
-    font-size: 70px;
-}
-
-.section {
-    padding: 80px 10%;
-}
-
-.cards {
-    display: grid;
-    gap: 20px;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-}
-
-.card {
-    background: #111;
-    padding: 25px;
-    border-radius: 15px;
-    transition: 0.3s;
-}
-
-.card:hover {
-    transform: translateY(-10px);
-}
-
-.botao {
-    margin-top: 20px;
-    padding: 15px 30px;
-    border-radius: 10px;
-    border: 2px solid white;
-    color: white;
-    text-decoration: none;
-}
-
-.social {
-    text-align: center;
-    padding: 50px;
-}
-
-.social i {
-    font-size: 35px;
-}
-
-footer {
-    padding: 30px;
-    text-align: center;
-    background: #111;
-}
-
-@media (max-width: 768px) {
-
-    nav {
-        flex-wrap: wrap;
-    }
-
-    .hero h1 {
-        font-size: 45px;
-    }
-}
-const cards = document.querySelectorAll(".card");
-
-cards.forEach((card) => {
-    card.addEventListener("mouseover", () => {
-        card.style.transform = "scale(1.03)";
-    });
-
-    card.addEventListener("mouseout", () => {
-        card.style.transform = "scale(1)";
-    });
-});
