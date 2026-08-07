@@ -1,13 +1,3 @@
-const titulo = document.querySelector(".hero h1");
-
-document.addEventListener("mousemove", (evento) => {
-
-    const x = (evento.clientX / window.innerWidth - 0.5) * 15;
-    const y = (evento.clientY / window.innerHeight - 0.5) * 15;
-
-    titulo.style.transform = `translate(${x}px, ${y}px)`;
-
-});
 const formulario = document.getElementById("formulario-jogador");
 
 formulario.addEventListener("submit", function (evento) {
@@ -33,9 +23,10 @@ formulario.addEventListener("submit", function (evento) {
 ${mensagem}
 `;
 
-    const numero = "41998045779";
+    const numero = "5541998045779";
 
-    const url = `https://wa.me/${numero}?text=${encodeURIComponent(texto)}`;
+    const url =
+        `https://wa.me/${numero}?text=${encodeURIComponent(texto)}`;
 
     window.open(url, "_blank");
 
