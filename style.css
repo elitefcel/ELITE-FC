@@ -83,3 +83,15 @@ nav a {
         transform: rotate(360deg);
     }
 }
+body {
+    opacity: 0;
+    transition: 1s;
+}
+
+nav a {
+    display: inline-block;
+}
+
+.hero h1 {
+    transition: 0.1s;
+}
