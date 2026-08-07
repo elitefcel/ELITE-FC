@@ -1,54 +1,93 @@
-// Animación del título principal
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-const titulo = document.querySelector(".hero h1");
+html {
+    scroll-behavior: smooth;
+}
 
-document.addEventListener("mousemove", (evento) => {
+body {
+    background: #000;
+    color: #fff;
+    font-family: Arial, sans-serif;
+}
 
-    const x = (evento.clientX / window.innerWidth - 0.5) * 20;
-    const y = (evento.clientY / window.innerHeight - 0.5) * 20;
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding: 20px 40px;
+    background: rgba(0, 0, 0, 0.9);
 
-    titulo.style.transform = `translate(${x}px, ${y}px)`;
-});
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
 
-// Animación de los enlaces del menú
+.logo {
+    font-size: 28px;
+    font-weight: bold;
+}
 
-const links = document.querySelectorAll("nav a");
+nav a {
+    color: white;
+    text-decoration: none;
+    margin-left: 20px;
+}
 
-links.forEach((link) => {
+.hero {
+    min-height: 100vh;
 
-    link.addEventListener("mouseenter", () => {
-        link.style.transform = "scale(1.1)";
-        link.style.transition = "0.3s";
-    });
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
 
-    link.addEventListener("mouseleave", () => {
-        link.style.transform = "scale(1)";
-    });
+.hero h1 {
+    font-size: 80px;
 
-});
+    text-shadow:
+        0 0 10px white,
+        0 0 20px white,
+        0 0 40px white;
+}
 
-// Animación de las tarjetas
+.hero p {
+    margin-top: 20px;
+}
 
-const tarjetas = document.querySelectorAll(".card");
+.botao {
+    margin-top: 30px;
+    padding: 15px 30px;
+    border: 2px solid white;
+    border-radius: 10px;
+    color: white;
+    text-decoration: none;
+}
 
-tarjetas.forEach((tarjeta) => {
+.section {
+    padding: 100px 10%;
+}
 
-    tarjeta.addEventListener("mouseenter", () => {
-        tarjeta.style.transform = "translateY(-8px)";
-        tarjeta.style.boxShadow = "0 0 20px rgba(255,255,255,0.2)";
-    });
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
 
-    tarjeta.addEventListener("mouseleave", () => {
-        tarjeta.style.transform = "translateY(0)";
-        tarjeta.style.boxShadow = "none";
-    });
+.card {
+    padding: 25px;
+    border-radius: 15px;
+    background: #111;
+}
 
-});
+#redes {
+    text-align: center;
+}
 
-// Efecto de aparición
-
-window.addEventListener("load", () => {
-
-    document.body.style.opacity = "1";
-
-});
+footer {
+    padding: 30px;
+}
