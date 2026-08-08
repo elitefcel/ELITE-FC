@@ -1,345 +1,1674 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+/* ==========================================
+   VARIÁVEIS
+========================================== */
+
+:root {
+
+    --preto: #050505;
+
+    --preto-2: #0b0b0b;
+
+    --preto-card: #111111;
+
+    --dourado: #d4af37;
+
+    --dourado-2: #b88a2a;
+
+    --dourado-escuro: #6f5018;
+
+    --branco: #ffffff;
+
+    --cinza: #aaaaaa;
+
+    --borda: #292929;
+
 }
+
+
+/* ==========================================
+   RESET
+========================================== */
+
+* {
+
+    margin: 0;
+
+    padding: 0;
+
+    box-sizing: border-box;
+
+}
+
 
 html {
+
     scroll-behavior: smooth;
+
+    scroll-padding-top: 30px;
+
 }
+
 
 body {
-    background: #000;
-    color: white;
+
+    background: var(--preto);
+
+    color: var(--branco);
+
     font-family: Arial, sans-serif;
+
+    overflow-x: hidden;
+
 }
 
-header {
+
+/* ==========================================
+   MENU LATERAL
+========================================== */
+
+.sidebar {
+
     position: fixed;
+
     top: 0;
-    width: 100%;
-    padding: 20px 50px;
-    background: #111;
+
+    left: 0;
+
+    width: 280px;
+
+    height: 100vh;
+
+    background:
+
+        linear-gradient(
+            160deg,
+            #111111 0%,
+            #050505 70%,
+            #0d0d0d 100%
+        );
+
+    padding: 35px 12px;
 
     display: flex;
-    justify-content: space-between;
+
+    flex-direction: column;
+
+    border-right: 1px solid
+                rgba(212, 175, 55, 0.35);
+
+    z-index: 1000;
+
+}
+
+
+/* ==========================================
+   LOGO
+========================================== */
+
+.logo-area {
+
+    display: flex;
+
     align-items: center;
+
+    gap: 12px;
+
+    padding: 0 12px;
+
+    margin-bottom: 45px;
+
 }
 
-.logo {
-    font-size: 30px;
-    font-weight: bold;
+
+.logo-area img {
+
+    width: 55px;
+
+    height: 55px;
+
+    object-fit: contain;
+
 }
 
-nav a {
-    color: white;
+
+.logo-text {
+
+    display: flex;
+
+    flex-direction: column;
+
+    line-height: 0.9;
+
+}
+
+
+.logo-text span {
+
+    font-size: 27px;
+
+    font-weight: 900;
+
+}
+
+
+.logo-text span:last-child {
+
+    color: var(--dourado);
+
+}
+
+
+/* ==========================================
+   MENU
+========================================== */
+
+.menu {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 8px;
+
+}
+
+
+.menu-item {
+
+    height: 62px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 18px;
+
+    padding: 0 22px;
+
+    border-radius: 14px;
+
+    color: #eeeeee;
+
     text-decoration: none;
-    margin-left: 20px;
+
+    font-size: 16px;
+
+    font-weight: 600;
+
+    transition: all 0.25s ease;
+
 }
+
+
+.menu-item i {
+
+    width: 25px;
+
+    text-align: center;
+
+    font-size: 19px;
+
+    color: var(--dourado);
+
+}
+
+
+.menu-item:hover {
+
+    background:
+        rgba(212, 175, 55, 0.10);
+
+    color: var(--dourado);
+
+    transform: translateX(4px);
+
+}
+
+
+/* MENU ATIVO */
+
+.menu-item.ativo {
+
+    background:
+
+        linear-gradient(
+            90deg,
+            rgba(212, 175, 55, 0.95),
+            rgba(111, 80, 24, 0.65)
+        );
+
+    color: white;
+
+    box-shadow:
+
+        0 0 20px
+        rgba(212, 175, 55, 0.15);
+
+}
+
+
+.menu-item.ativo i {
+
+    color: white;
+
+}
+
+
+/* ==========================================
+   BOTÃO MOBILE
+========================================== */
+
+.menu-mobile {
+
+    display: none;
+
+    position: fixed;
+
+    top: 18px;
+
+    right: 18px;
+
+    width: 48px;
+
+    height: 48px;
+
+    border-radius: 12px;
+
+    border: 1px solid var(--dourado);
+
+    background: #111;
+
+    color: var(--dourado);
+
+    font-size: 20px;
+
+    z-index: 2000;
+
+}
+
+
+/* ==========================================
+   CONTEÚDO
+========================================== */
+
+main {
+
+    margin-left: 280px;
+
+    min-height: 100vh;
+
+}
+
+
+/* ==========================================
+   HERO
+========================================== */
 
 .hero {
+
     min-height: 100vh;
 
     display: flex;
-    justify-content: center;
-    align-items: center;
+
     flex-direction: column;
+
+    justify-content: center;
+
+    align-items: center;
+
+    text-align: center;
+
+    padding: 50px;
+
+    position: relative;
+
+    overflow: hidden;
+
+    background:
+
+        radial-gradient(
+            circle at center,
+            rgba(212, 175, 55, 0.10),
+            transparent 45%
+        );
+
 }
+
+
+.hero::before {
+
+    content: "";
+
+    position: absolute;
+
+    width: 500px;
+
+    height: 500px;
+
+    border-radius: 50%;
+
+    border: 1px solid
+        rgba(212, 175, 55, 0.12);
+
+}
+
+
+.escudo-hero {
+
+    width: 150px;
+
+    height: 150px;
+
+    object-fit: contain;
+
+    margin-bottom: 25px;
+
+    filter:
+
+        drop-shadow(
+            0 0 20px
+            rgba(212, 175, 55, 0.25)
+        );
+
+}
+
+
+.hero-tag {
+
+    color: var(--dourado);
+
+    font-size: 13px;
+
+    font-weight: bold;
+
+    letter-spacing: 3px;
+
+    margin-bottom: 12px;
+
+}
+
 
 .hero h1 {
+
     font-size: 90px;
 
+    font-weight: 900;
+
+    letter-spacing: 4px;
+
+    color: white;
+
     text-shadow:
-        0 0 10px white,
-        0 0 20px white,
-        0 0 40px white;
+
+        0 0 10px
+        rgba(212, 175, 55, 0.35),
+
+        0 0 30px
+        rgba(212, 175, 55, 0.15);
+
 }
+
 
 .hero p {
-    margin-top: 20px;
+
+    margin-top: 18px;
+
+    color: var(--cinza);
+
+    font-size: 18px;
+
 }
+
+
+/* ==========================================
+   SEÇÕES
+========================================== */
 
 .section {
-    padding: 120px 10%;
+
+    padding: 110px 8%;
+
+    border-top: 1px solid #151515;
+
 }
+
 
 .section h2 {
+
     margin-bottom: 40px;
+
+    font-size: 34px;
+
 }
 
-.cards {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 20px;
+
+/* ==========================================
+   LABEL DAS SEÇÕES
+========================================== */
+
+.section-label {
+
+    color: var(--dourado);
+
+    font-size: 11px;
+
+    font-weight: bold;
+
+    letter-spacing: 3px;
+
+    margin-bottom: 8px;
+
 }
 
-.card {
-    padding: 25px;
-    border-radius: 15px;
-    background: #111;
-    border: 1px solid #222;
+
+/* ==========================================
+   ELENCO
+========================================== */
+
+.elenco {
+
+    text-align: center;
+
 }
 
-.card:hover {
-    transform: translateY(-5px);
+
+.escudo-elenco {
+
+    width: 110px;
+
+    margin-bottom: 20px;
+
 }
+
+
+.elenco h2 {
+
+    font-size: 36px;
+
+    font-weight: 900;
+
+}
+
+
+.subtitulo {
+
+    color: var(--cinza);
+
+    margin-bottom: 40px;
+
+    font-size: 17px;
+
+}
+
+
+/* ==========================================
+   CATEGORIAS
+========================================== */
 
 .categoria {
-    margin-bottom: 50px;
+
+    color: var(--dourado);
+
+    font-size: 22px;
+
+    margin: 55px 0 25px;
+
+    text-transform: uppercase;
+
+    border-bottom: 2px solid
+                var(--dourado);
+
+    display: inline-block;
+
+    padding-bottom: 8px;
+
 }
 
-#redes {
-    text-align: center;
+
+/* ==========================================
+   JOGADORES
+========================================== */
+
+.jogadores {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(auto-fit, minmax(210px, 1fr));
+
+    gap: 22px;
+
+    max-width: 1200px;
+
+    margin: auto;
+
 }
 
-#redes i {
-    font-size: 50px;
-    color: white;
-    margin-bottom: 20px;
+
+.jogador {
+
+    background:
+
+        linear-gradient(
+            145deg,
+            #151515,
+            #0c0c0c
+        );
+
+    border-radius: 18px;
+
+    padding: 25px 15px;
+
+    border: 1px solid #272727;
+
+    box-shadow:
+        0 8px 25px
+        rgba(0, 0, 0, 0.4);
+
+    transition: 0.3s ease;
+
 }
-.botao-whatsapp {
-    display: inline-flex;
+
+
+.jogador:hover {
+
+    transform: translateY(-8px);
+
+    border-color: var(--dourado);
+
+    box-shadow:
+
+        0 10px 30px
+        rgba(212, 175, 55, 0.10);
+
+}
+
+
+.foto-jogador {
+
+    width: 105px;
+
+    height: 105px;
+
+    margin: 0 auto 15px;
+
+    border-radius: 50%;
+
+    background:
+
+        radial-gradient(
+            circle,
+            #2a2a2a,
+            #0c0c0c
+        );
+
+    border: 2px solid
+            var(--dourado);
+
+    color: var(--dourado);
+
+    display: flex;
+
     align-items: center;
+
+    justify-content: center;
+
+    font-size: 40px;
+
+    font-weight: 900;
+
+}
+
+
+.jogador h3 {
+
+    font-size: 18px;
+
+    margin: 10px 0;
+
+}
+
+
+.jogador p {
+
+    display: inline-block;
+
+    background: var(--dourado);
+
+    color: #000;
+
+    padding: 6px 15px;
+
+    border-radius: 20px;
+
+    font-size: 13px;
+
+    font-weight: bold;
+
+}
+
+
+/* ==========================================
+   CARDS
+========================================== */
+
+.cards {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(auto-fit, minmax(240px, 1fr));
+
+    gap: 20px;
+
+}
+
+
+.card {
+
+    padding: 30px;
+
+    border-radius: 18px;
+
+    background:
+
+        linear-gradient(
+            145deg,
+            #151515,
+            #0d0d0d
+        );
+
+    border: 1px solid #292929;
+
+    transition: 0.3s ease;
+
+}
+
+
+.card:hover {
+
+    transform: translateY(-5px);
+
+    border-color:
+        rgba(212, 175, 55, 0.6);
+
+}
+
+
+.card p {
+
+    color: #aaa;
+
+    margin-top: 12px;
+
+    line-height: 1.6;
+
+}
+
+
+/* ==========================================
+   PATROCINADORES
+========================================== */
+
+.patrocinadores {
+
+    text-align: center;
+
+}
+
+
+.patrocinador-card {
+
+    max-width: 650px;
+
+    margin: auto;
+
+}
+
+
+.card-icon {
+
+    width: 60px;
+
+    height: 60px;
+
+    margin: 0 auto 20px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background:
+
+        rgba(212, 175, 55, 0.12);
+
+    color: var(--dourado);
+
+    font-size: 25px;
+
+}
+
+
+/* ==========================================
+   BOTÃO PATROCINADOR
+========================================== */
+
+.botao-patrocinador {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    margin-top: 25px;
+
+    padding: 14px 25px;
+
+    border-radius: 10px;
+
+    background: var(--dourado);
+
+    color: #000;
+
+    font-weight: bold;
+
+    text-decoration: none;
+
+    transition: 0.3s;
+
+}
+
+
+.botao-patrocinador:hover {
+
+    background: #e4c45a;
+
+    transform: translateY(-2px);
+
+}
+
+
+/* ==========================================
+   PARTIDA
+========================================== */
+
+.titulo-secao span {
+
+    color: var(--dourado);
+
+    font-size: 11px;
+
+    font-weight: bold;
+
+    letter-spacing: 3px;
+
+}
+
+
+.titulo-secao h2 {
+
+    margin-top: 7px;
+
+}
+
+
+.partida-card {
+
+    max-width: 950px;
+
+    padding: 35px;
+
+    border-radius: 22px;
+
+    background:
+
+        linear-gradient(
+            145deg,
+            #151515,
+            #0c0c0c
+        );
+
+    border: 1px solid
+            rgba(212, 175, 55, 0.35);
+
+    position: relative;
+
+    overflow: hidden;
+
+}
+
+
+.partida-card::before {
+
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+
+    left: 0;
+
+    width: 100%;
+
+    height: 4px;
+
+    background:
+
+        linear-gradient(
+            90deg,
+            #6f5018,
+            #d4af37,
+            #6f5018
+        );
+
+}
+
+
+.partida-topo {
+
+    text-align: center;
+
+    margin-bottom: 30px;
+
+}
+
+
+.partida-topo span {
+
+    font-size: 10px;
+
+    letter-spacing: 2px;
+
+    font-weight: bold;
+
+    color: #000;
+
+    background: var(--dourado);
+
+    padding: 7px 14px;
+
+    border-radius: 20px;
+
+}
+
+
+/* TIMES */
+
+.times {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 60px;
+
+    margin-bottom: 30px;
+
+}
+
+
+.time {
+
+    width: 160px;
+
+    text-align: center;
+
+}
+
+
+.time img {
+
+    width: 90px;
+
+    height: 90px;
+
+    object-fit: contain;
+
+    margin-bottom: 12px;
+
+}
+
+
+.time h3 {
+
+    font-size: 17px;
+
+}
+
+
+.versus span {
+
+    width: 48px;
+
+    height: 48px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: var(--dourado);
+
+    color: #000;
+
+    font-size: 20px;
+
+    font-weight: 900;
+
+}
+
+
+/* DATA */
+
+.data-partida {
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    gap: 10px;
+
+    margin-bottom: 25px;
+
+}
+
+
+.data-partida strong {
+
+    font-size: 45px;
+
+    line-height: 1;
+
+    color: var(--dourado);
+
+}
+
+
+.data-partida div {
+
+    display: flex;
+
+    flex-direction: column;
+
+}
+
+
+.data-partida span {
+
+    font-size: 14px;
+
+    font-weight: bold;
+
+}
+
+
+.data-partida small {
+
+    color: #777;
+
+}
+
+
+/* INFORMAÇÕES */
+
+.info-partida {
+
+    display: flex;
+
+    justify-content: center;
+
+    gap: 35px;
+
+    margin-bottom: 25px;
+
+}
+
+
+.info-partida div {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    color: #ccc;
+
+}
+
+
+.info-partida i {
+
+    color: var(--dourado);
+
+}
+
+
+/* BOTÃO */
+
+.botao-detalhes {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 10px;
+
+    width: 100%;
+
+    padding: 14px;
+
+    border-radius: 11px;
+
+    background: var(--dourado);
+
+    color: #000;
+
+    text-decoration: none;
+
+    font-weight: bold;
+
+    transition: 0.3s;
+
+}
+
+
+.botao-detalhes:hover {
+
+    background: #e4c45a;
+
+    transform: translateY(-2px);
+
+}
+
+
+/* ==========================================
+   VAGAS
+========================================== */
+
+.vaga-icon {
+
+    color: var(--dourado);
+
+    font-size: 28px;
+
+    margin-bottom: 18px;
+
+}
+
+
+.vaga-card h3 {
+
+    font-size: 21px;
+
+}
+
+
+.botao {
+
+    display: inline-block;
+
+    margin-top: 20px;
+
+    padding: 11px 20px;
+
+    border-radius: 9px;
+
+    background: var(--dourado);
+
+    color: #000;
+
+    text-decoration: none;
+
+    font-weight: bold;
+
+    transition: 0.3s;
+
+}
+
+
+.botao:hover {
+
+    transform: translateY(-2px);
+
+    background: #e4c45a;
+
+}
+
+
+/* ==========================================
+   FORMULÁRIO
+========================================== */
+
+form {
+
+    max-width: 650px;
+
+    margin: auto;
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 15px;
+
+}
+
+
+input,
+select,
+textarea {
+
+    width: 100%;
+
+    padding: 16px;
+
+    border: 1px solid #292929;
+
+    border-radius: 10px;
+
+    background: #111;
+
+    color: white;
+
+    outline: none;
+
+    font-size: 15px;
+
+}
+
+
+input:focus,
+select:focus,
+textarea:focus {
+
+    border-color: var(--dourado);
+
+}
+
+
+textarea {
+
+    min-height: 150px;
+
+    resize: vertical;
+
+}
+
+
+button[type="submit"] {
+
+    padding: 16px;
+
+    border: none;
+
+    border-radius: 10px;
+
+    background: var(--dourado);
+
+    color: #000;
+
+    cursor: pointer;
+
+    font-weight: bold;
+
+    font-size: 15px;
+
+    transition: 0.3s;
+
+}
+
+
+button[type="submit"]:hover {
+
+    background: #e4c45a;
+
+    transform: translateY(-2px);
+
+}
+
+
+/* ==========================================
+   AMISTOSOS
+========================================== */
+
+.amistoso-card {
+
+    max-width: 650px;
+
+}
+
+
+.botao-whatsapp {
+
+    display: inline-flex;
+
+    align-items: center;
+
     gap: 10px;
 
     margin-top: 20px;
-    padding: 15px 30px;
+
+    padding: 14px 25px;
 
     border-radius: 10px;
 
     background: #25d366;
 
     color: white;
+
     text-decoration: none;
 
+    font-weight: bold;
+
     transition: 0.3s;
+
 }
+
 
 .botao-whatsapp:hover {
-    transform: scale(1.05);
-}
 
-.botao-whatsapp i {
-    font-size: 20px;
-}
-form {
-    max-width: 600px;
-    margin: auto;
-
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-}
-
-input,
-textarea {
-    padding: 15px;
-    border: none;
-    border-radius: 10px;
-
-    background: #111;
-    color: white;
-}
-
-button {
-    padding: 15px;
-
-    border: none;
-    border-radius: 10px;
-
-    background: white;
-    color: black;
-
-    cursor: pointer;
-}
-form {
-    max-width: 600px;
-    margin: auto;
-
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-}
-
-input,
-select,
-textarea {
-    padding: 15px;
-    border: none;
-    border-radius: 10px;
-
-    background: #111;
-    color: white;
-}
-
-button {
-    padding: 15px;
-
-    border: none;
-    border-radius: 10px;
-
-    background: white;
-    color: black;
-
-    cursor: pointer;
-
-    transition: 0.3s;
-}
-
-button:hover {
     transform: scale(1.03);
-}
-.botao-patrocinador {
-    display: inline-block;
-    margin-top: 20px;
-    padding: 15px 30px;
 
-    border-radius: 10px;
-
-    background: #ffffff;
-    color: #000000;
-
-    text-decoration: none;
-
-    transition: 0.3s;
 }
 
-.botao-patrocinador:hover {
-    transform: scale(1.05);
-}
 
-#patrocinadores {
+/* ==========================================
+   REDES
+========================================== */
+
+.redes {
+
     text-align: center;
-}
-#patrocinadores {
-    text-align: center;
+
 }
 
-.botao-patrocinador {
-    display: inline-block;
-    margin-top: 20px;
-    padding: 15px 30px;
 
-    background: #ffffff;
-    color: #000000;
+.instagram {
 
-    border-radius: 10px;
+    width: 70px;
 
-    text-decoration: none;
+    height: 70px;
 
-    transition: 0.3s;
-}
+    margin: 10px auto 20px;
 
-.botao-patrocinador:hover {
-    transform: scale(1.05);
-}
-.elenco {
-    padding: 60px 20px;
-    background: #000;
-    text-align: center;
-}
-
-.elenco h2 {
-    font-size: 36px;
-    font-weight: 800;
-    margin-bottom: 10px;
-    text-transform: uppercase;
-    color: white;
-}
-
-.subtitulo {
-    color: #ccc;
-    margin-bottom: 40px;
-    font-size: 18px;
-}
-
-.jogadores {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 25px;
-    max-width: 1200px;
-    margin: auto;
-}
-
-.jogador {
-    background: #111;
-    border-radius: 18px;
-    padding: 25px 15px;
-    box-shadow: 0 8px 20px rgba(255,255,255,0.08);
-    transition: 0.3s ease;
-    border: 1px solid #333;
-}
-
-.jogador:hover {
-    transform: translateY(-8px);
-}
-
-.foto-jogador {
-    width: 110px;
-    height: 110px;
-    margin: 0 auto 15px;
-    border-radius: 50%;
-    background: linear-gradient(135deg, #222, #555);
-    color: white;
     display: flex;
+
     align-items: center;
+
     justify-content: center;
-    font-size: 42px;
-    font-weight: bold;
-}
 
-.jogador h3 {
-    font-size: 20px;
-    margin: 10px 0;
-    color: white;
-}
-
-.jogador p {
-    display: inline-block;
-    background: white;
-    color: black;
-    padding: 6px 15px;
     border-radius: 20px;
-    font-size: 14px;
-    margin-top: 5px;
+
+    border: 1px solid
+            var(--dourado);
+
+    color: var(--dourado);
+
+    font-size: 35px;
+
+    text-decoration: none;
+
+    transition: 0.3s;
+
 }
 
-@media(max-width:600px){
+
+.instagram:hover {
+
+    background: var(--dourado);
+
+    color: #000;
+
+    transform: translateY(-5px);
+
+}
+
+
+/* ==========================================
+   RODAPÉ
+========================================== */
+
+footer {
+
+    margin-left: 280px;
+
+    padding: 40px;
+
+    text-align: center;
+
+    border-top: 1px solid #222;
+
+    background: #080808;
+
+}
+
+
+footer img {
+
+    width: 55px;
+
+    margin-bottom: 15px;
+
+}
+
+
+footer p {
+
+    font-weight: bold;
+
+}
+
+
+footer span {
+
+    display: block;
+
+    margin-top: 8px;
+
+    color: #777;
+
+    font-size: 13px;
+
+}
+
+
+/* ==========================================
+   TABLET
+========================================== */
+
+@media (max-width: 900px) {
+
+    .sidebar {
+
+        width: 240px;
+
+    }
+
+
+    main {
+
+        margin-left: 240px;
+
+    }
+
+
+    footer {
+
+        margin-left: 240px;
+
+    }
+
+
+    .hero h1 {
+
+        font-size: 65px;
+
+    }
+
+
+    .section {
+
+        padding: 80px 5%;
+
+    }
+
+
+    .times {
+
+        gap: 30px;
+
+    }
+
+}
+
+
+/* ==========================================
+   CELULAR
+========================================== */
+
+@media (max-width: 600px) {
+
+    .sidebar {
+
+        width: 250px;
+
+        transform: translateX(-100%);
+
+        transition: transform 0.3s ease;
+
+        box-shadow:
+
+            10px 0 30px
+            rgba(0, 0, 0, 0.5);
+
+    }
+
+
+    .sidebar.aberto {
+
+        transform: translateX(0);
+
+    }
+
+
+    .menu-mobile {
+
+        display: flex;
+
+        align-items: center;
+
+        justify-content: center;
+
+    }
+
+
+    main {
+
+        margin-left: 0;
+
+    }
+
+
+    footer {
+
+        margin-left: 0;
+
+    }
+
+
+    .hero {
+
+        min-height: 90vh;
+
+        padding: 30px;
+
+    }
+
+
+    .escudo-hero {
+
+        width: 120px;
+
+        height: 120px;
+
+    }
+
+
+    .hero h1 {
+
+        font-size: 48px;
+
+        letter-spacing: 2px;
+
+    }
+
+
+    .hero p {
+
+        font-size: 15px;
+
+    }
+
+
+    .section {
+
+        padding: 70px 20px;
+
+    }
+
+
+    .section h2 {
+
+        font-size: 27px;
+
+    }
+
 
     .elenco h2 {
+
         font-size: 28px;
+
     }
+
 
     .jogadores {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 15px;
+
+        grid-template-columns:
+            repeat(2, 1fr);
+
+        gap: 14px;
+
     }
+
 
     .jogador {
+
         padding: 18px 10px;
+
     }
+
 
     .foto-jogador {
-        width: 85px;
-        height: 85px;
-        font-size: 32px;
+
+        width: 80px;
+
+        height: 80px;
+
+        font-size: 29px;
+
     }
+
 
     .jogador h3 {
-        font-size: 16px;
+
+        font-size: 14px;
+
     }
 
-}.escudo-elenco {
-    width: 120px;
-    margin-bottom: 20px;
-}
 
-.categoria {
-    color: white;
-    font-size: 24px;
-    margin: 45px 0 25px;
-    text-transform: uppercase;
-    border-bottom: 2px solid white;
-    display: inline-block;
-    padding-bottom: 8px;
+    .jogador p {
+
+        font-size: 11px;
+
+        padding: 5px 9px;
+
+    }
+
+
+    .categoria {
+
+        font-size: 18px;
+
+    }
+
+
+    /* PARTIDA */
+
+    .partida-card {
+
+        padding: 25px 15px;
+
+    }
+
+
+    .times {
+
+        gap: 10px;
+
+    }
+
+
+    .time {
+
+        width: 95px;
+
+    }
+
+
+    .time img {
+
+        width: 65px;
+
+        height: 65px;
+
+    }
+
+
+    .time h3 {
+
+        font-size: 13px;
+
+    }
+
+
+    .versus span {
+
+        width: 36px;
+
+        height: 36px;
+
+        font-size: 15px;
+
+    }
+
+
+    .info-partida {
+
+        flex-direction: column;
+
+        align-items: center;
+
+        gap: 12px;
+
+    }
+
+
+    .data-partida strong {
+
+        font-size: 38px;
+
+    }
+
+
+    footer {
+
+        padding: 30px 20px;
+
+    }
+
 }
