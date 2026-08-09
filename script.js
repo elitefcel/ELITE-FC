@@ -1,109 +1,196 @@
-/* =========================
-   MENU ATIVO
-========================= */
+/* =====================================
+   CONTROLE DAS TELAS
+===================================== */
 
-const menuItems = document.querySelectorAll(".menu-item");
-
-const sections = document.querySelectorAll("section[id]");
+const telas = document.querySelectorAll(".tela");
 
 
-window.addEventListener("scroll", () => {
+function abrirTela(nome) {
 
-    let atual = "";
+    /*
+     * Esconde todas as telas
+     */
 
-    sections.forEach(section => {
+    telas.forEach(function(tela) {
 
-        const topo = section.offsetTop - 150;
-
-        const altura = section.offsetHeight;
-
-        if (
-            window.scrollY >= topo &&
-            window.scrollY < topo + altura
-        ) {
-
-            atual = section.getAttribute("id");
-
-        }
+        tela.classList.remove("ativa");
 
     });
 
 
-    menuItems.forEach(item => {
+    /*
+     * Mostra a tela escolhida
+     */
 
-        item.classList.remove("ativo");
+    const telaEscolhida =
+        document.getElementById(nome);
 
-        if (
-            item.getAttribute("href") === "#" + atual
-        ) {
 
-            item.classList.add("ativo");
+    if (telaEscolhida) {
 
-        }
+        telaEscolhida.classList.add("ativa");
 
+    }
+
+
+    /*
+     * Volta para o topo
+     */
+
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"
     });
 
-});
+}
 
 
-/* =========================
+/* =====================================
+   VOLTAR PARA O PAINEL
+===================================== */
+
+function voltarPainel() {
+
+    abrirTela("painel");
+
+}
+
+
+/* =====================================
+   ABRIR FORMULÁRIO
+===================================== */
+
+function abrirFormulario(posicao) {
+
+    abrirTela("formulario");
+
+
+    /*
+     * Seleciona automaticamente
+     * a posição escolhida
+     */
+
+    const select =
+        document.getElementById("posicao");
+
+
+    if (select) {
+
+        select.value = posicao;
+
+    }
+
+}
+
+
+/* =====================================
    FORMULÁRIO
-========================= */
+===================================== */
 
 const formulario =
-    document.getElementById("formulario-jogador");
+    document.getElementById(
+        "formulario-jogador"
+    );
 
 
 if (formulario) {
 
-    formulario.addEventListener("submit", function(event) {
+    formulario.addEventListener(
+        "submit",
+        function(event) {
 
-        event.preventDefault();
-
-
-        const nome =
-            document.getElementById("nome").value;
-
-        const idade =
-            document.getElementById("idade").value;
-
-        const posicao =
-            document.getElementById("posicao").value;
-
-        const cidade =
-            document.getElementById("cidade").value;
-
-        const mensagem =
-            document.getElementById("mensagem").value;
+            event.preventDefault();
 
 
-        const texto =
+            /*
+             * Pega os dados
+             */
 
-            `Olá, ELITE FC!%0A%0A` +
+            const nome =
+                document.getElementById(
+                    "nome"
+                ).value;
 
-            `Gostaria de me candidatar para fazer parte do time.%0A%0A` +
+            const idade =
+                document.getElementById(
+                    "idade"
+                ).value;
 
-            `*Nome:* ${nome}%0A` +
+            const posicao =
+                document.getElementById(
+                    "posicao"
+                ).value;
 
-            `*Idade:* ${idade}%0A` +
+            const cidade =
+                document.getElementById(
+                    "cidade"
+                ).value;
 
-            `*Posição:* ${posicao}%0A` +
-
-            `*Cidade:* ${cidade}%0A` +
-
-            `*Sobre mim:* ${mensagem}`;
-
-
-        const whatsapp =
-            `https://wa.me/5541998045779?text=${texto}`;
-
-
-        window.open(
-            whatsapp,
-            "_blank"
-        );
+            const mensagem =
+                document.getElementById(
+                    "mensagem"
+                ).value;
 
 
-    });
+            /*
+             * Monta a mensagem
+             */
+
+            const texto =
+
+                "Olá, ELITE FC!%0A%0A" +
+
+                "Gostaria de fazer parte do time.%0A%0A" +
+
+                "*Nome:* " +
+                encodeURIComponent(nome) +
+                "%0A" +
+
+                "*Idade:* " +
+                encodeURIComponent(idade) +
+                "%0A" +
+
+                "*Posição:* " +
+                encodeURIComponent(posicao) +
+                "%0A" +
+
+                "*Cidade:* " +
+                encodeURIComponent(cidade) +
+                "%0A" +
+
+                "*Sobre mim:* " +
+                encodeURIComponent(mensagem);
+
+
+            /*
+             * Número do WhatsApp
+             */
+
+            const numero =
+                "5541998045779";
+
+
+            /*
+             * Link do WhatsApp
+             */
+
+            const whatsapp =
+                "https://wa.me/" +
+                numero +
+                "?text=" +
+                texto;
+
+
+            /*
+             * Abre o WhatsApp
+             */
+
+            window.open(
+                whatsapp,
+                "_blank"
+            );
+
+        }
+    );
 
 }
