@@ -8,815 +8,272 @@
     <meta name="viewport"
           content="width=device-width, initial-scale=1.0">
 
-    <title>ELITE FC</title>
+    <title>ELITE FC • Admin</title>
 
-    <link rel="stylesheet"
-          href="style.css">
+    <link rel="stylesheet" href="admin.css">
 
-    <link rel="stylesheet"
-          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
 
 </head>
-
 
 <body>
 
 
-<!-- =====================================
-     FUNDO
-===================================== -->
+    <!-- LOGIN -->
 
-<div class="fundo"></div>
+    <div id="login-container">
 
+        <div class="login-box">
 
-<!-- =====================================
-     APLICATIVO
-===================================== -->
+            <img
+                src="../img/escudo.png"
+                alt="ELITE FC">
 
-<main class="app">
+            <h1>ELITE FC</h1>
 
+            <span>Painel administrativo</span>
 
-    <!-- =================================
-         CABEÇALHO
-    ================================== -->
+            <form id="login-form">
 
-    <header class="topo">
+                <input
+                    type="email"
+                    id="email"
+                    placeholder="E-mail"
+                    required>
 
-        <div class="logo">
+                <input
+                    type="password"
+                    id="senha"
+                    placeholder="Senha"
+                    required>
 
-            <img src="img/escudo.png"
-                 alt="Escudo ELITE FC">
+                <button type="submit">
 
-            <div>
+                    Entrar
 
-                <strong>ELITE FC</strong>
-
-                <span>Futebol • União • Respeito</span>
-
-            </div>
-
-        </div>
-
-
-        <div class="ano">
-            2026
-        </div>
-
-    </header>
-
-
-
-    <!-- =================================
-         PAINEL PRINCIPAL
-    ================================== -->
-
-    <section id="painel"
-             class="tela ativa">
-
-
-        <div class="inicio">
-
-
-            <div class="escudo-principal">
-
-                <div class="brilho"></div>
-
-                <img src="img/escudo.png"
-                     alt="Escudo ELITE FC">
-
-            </div>
-
-
-            <p class="etiqueta">
-                FUTEBOL • UNIÃO • RESPEITO
-            </p>
-
-
-            <h1>
-                ELITE FC
-            </h1>
-
-
-            <p class="descricao">
-                Uma família, um escudo, um objetivo.
-            </p>
-
-
-            <div class="linha"></div>
-
-
-            <!-- MENU -->
-
-            <div class="menu-grid">
-
-
-                <button class="menu-card"
-                        onclick="abrirTela('patrocinadores')">
-
-                    <div class="icone">
-
-                        <i class="fa-solid fa-handshake"></i>
-
-                    </div>
-
-                    <div class="menu-texto">
-
-                        <strong>
-                            Patrocinadores
-                        </strong>
-
-                        <span>
-                            Apoie o nosso projeto
-                        </span>
-
-                    </div>
-
-                    <i class="fa-solid fa-chevron-right seta"></i>
+                    <i class="fa-solid fa-arrow-right"></i>
 
                 </button>
 
-
-
-                <button class="menu-card"
-                        onclick="abrirTela('vagas')">
-
-                    <div class="icone">
-
-                        <i class="fa-solid fa-futbol"></i>
-
-                    </div>
-
-                    <div class="menu-texto">
-
-                        <strong>
-                            Vagas
-                        </strong>
-
-                        <span>
-                            Faça parte do time
-                        </span>
-
-                    </div>
-
-                    <i class="fa-solid fa-chevron-right seta"></i>
-
-                </button>
-
-
-
-                <button class="menu-card"
-                        onclick="abrirTela('amistosos')">
-
-                    <div class="icone">
-
-                        <i class="fa-solid fa-trophy"></i>
-
-                    </div>
-
-                    <div class="menu-texto">
-
-                        <strong>
-                            Amistosos
-                        </strong>
-
-                        <span>
-                            Marque um jogo
-                        </span>
-
-                    </div>
-
-                    <i class="fa-solid fa-chevron-right seta"></i>
-
-                </button>
-
-
-
-                <button class="menu-card"
-                        onclick="abrirTela('redes')">
-
-                    <div class="icone">
-
-                        <i class="fa-brands fa-instagram"></i>
-
-                    </div>
-
-                    <div class="menu-texto">
-
-                        <strong>
-                            Redes sociais
-                        </strong>
-
-                        <span>
-                            Acompanhe o ELITE FC
-                        </span>
-
-                    </div>
-
-                    <i class="fa-solid fa-chevron-right seta"></i>
-
-                </button>
-
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-
-    <!-- =================================
-         PATROCINADORES
-    ================================== -->
-
-    <section id="patrocinadores"
-             class="tela">
-
-
-        <button class="voltar"
-                onclick="voltarPainel()">
-
-            <i class="fa-solid fa-arrow-left"></i>
-
-            Voltar
-
-        </button>
-
-
-        <div class="categoria-conteudo">
-
-
-            <span class="categoria-label">
-                PARCERIAS
-            </span>
-
-
-            <h2>
-                Seja nosso patrocinador
-            </h2>
-
-
-            <p class="categoria-descricao">
-
-                Sua empresa pode fazer parte
-                da história do ELITE FC.
-
-            </p>
-
-
-            <div class="categoria-card">
-
-
-                <div class="icone-grande">
-
-                    <i class="fa-solid fa-handshake"></i>
-
-                </div>
-
-
-                <h3>
-                    Apoie o ELITE FC
-                </h3>
-
-
-                <p>
-
-                    Estamos buscando empresas e
-                    parceiros que queiram crescer
-                    junto com o nosso projeto.
-
-                </p>
-
-
-                <p>
-
-                    Entre em contato para conhecer
-                    nossas propostas de parceria
-                    e patrocínio.
-
-                </p>
-
-
-                <a href="https://wa.me/5541998045779"
-                   target="_blank"
-                   class="botao principal">
-
-                    <i class="fa-brands fa-whatsapp"></i>
-
-                    Quero apoiar o ELITE FC
-
-                </a>
-
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-
-    <!-- =================================
-         VAGAS
-    ================================== -->
-
-    <section id="vagas"
-             class="tela">
-
-
-        <button class="voltar"
-                onclick="voltarPainel()">
-
-            <i class="fa-solid fa-arrow-left"></i>
-
-            Voltar
-
-        </button>
-
-
-        <div class="categoria-conteudo">
-
-
-            <span class="categoria-label">
-                SELEÇÃO
-            </span>
-
-
-            <h2>
-                Vagas disponíveis
-            </h2>
-
-
-            <p class="categoria-descricao">
-
-                Quer fazer parte do ELITE FC?
-                Confira as posições disponíveis.
-
-            </p>
-
-
-            <div class="vagas-grid">
-
-
-                <!-- GOLEIRO -->
-
-                <div class="vaga">
-
-                    <div class="vaga-icone">
-
-                        <i class="fa-solid fa-hand"></i>
-
-                    </div>
-
-
-                    <h3>
-                        Goleiro
-                    </h3>
-
-
-                    <p>
-                        Procuramos goleiros
-                        para reforçar a equipe.
-                    </p>
-
-
-                    <button class="botao"
-                            onclick="abrirFormulario('Goleiro')">
-
-                        Candidatar-se
-
-                    </button>
-
-                </div>
-
-
-
-                <!-- ZAGUEIRO -->
-
-                <div class="vaga">
-
-                    <div class="vaga-icone">
-
-                        <i class="fa-solid fa-shield-halved"></i>
-
-                    </div>
-
-
-                    <h3>
-                        Zagueiro
-                    </h3>
-
-
-                    <p>
-                        Procuramos jogadores
-                        para fortalecer nossa defesa.
-                    </p>
-
-
-                    <button class="botao"
-                            onclick="abrirFormulario('Zagueiro')">
-
-                        Candidatar-se
-
-                    </button>
-
-                </div>
-
-
-
-                <!-- VOLANTE -->
-
-                <div class="vaga">
-
-                    <div class="vaga-icone">
-
-                        <i class="fa-solid fa-futbol"></i>
-
-                    </div>
-
-
-                    <h3>
-                        Volante
-                    </h3>
-
-
-                    <p>
-                        Buscamos jogadores para
-                        nosso meio-campo.
-                    </p>
-
-
-                    <button class="botao"
-                            onclick="abrirFormulario('Volante')">
-
-                        Candidatar-se
-
-                    </button>
-
-                </div>
-
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-
-    <!-- =================================
-         FORMULÁRIO
-    ================================== -->
-
-    <section id="formulario"
-             class="tela">
-
-
-        <button class="voltar"
-                onclick="abrirTela('vagas')">
-
-            <i class="fa-solid fa-arrow-left"></i>
-
-            Voltar
-
-        </button>
-
-
-        <div class="categoria-conteudo">
-
-
-            <span class="categoria-label">
-                ELITE FC
-            </span>
-
-
-            <h2>
-                Faça sua inscrição
-            </h2>
-
-
-            <p class="categoria-descricao">
-
-                Preencha seus dados e envie
-                sua inscrição para o time.
-
-            </p>
-
-
-            <form id="formulario-jogador">
-
-
-                <div class="campo">
-
-                    <label for="nome">
-                        Nome completo
-                    </label>
-
-                    <input
-                        type="text"
-                        id="nome"
-                        placeholder="Digite seu nome"
-                        required>
-
-                </div>
-
-
-
-                <div class="campo">
-
-                    <label for="idade">
-                        Idade
-                    </label>
-
-                    <input
-                        type="number"
-                        id="idade"
-                        placeholder="Digite sua idade"
-                        min="10"
-                        max="80"
-                        required>
-
-                </div>
-
-
-
-                <div class="campo">
-
-                    <label for="posicao">
-                        Posição
-                    </label>
-
-                    <select id="posicao"
-                            required>
-
-                        <option value="">
-                            Escolha sua posição
-                        </option>
-
-                        <option value="Goleiro">
-                            Goleiro
-                        </option>
-
-                        <option value="Lateral direito">
-                            Lateral direito
-                        </option>
-
-                        <option value="Lateral esquerdo">
-                            Lateral esquerdo
-                        </option>
-
-                        <option value="Zagueiro">
-                            Zagueiro
-                        </option>
-
-                        <option value="Volante">
-                            Volante
-                        </option>
-
-                        <option value="Meia">
-                            Meia
-                        </option>
-
-                        <option value="Ponta direita">
-                            Ponta direita
-                        </option>
-
-                        <option value="Ponta esquerda">
-                            Ponta esquerda
-                        </option>
-
-                        <option value="Centroavante">
-                            Centroavante
-                        </option>
-
-                    </select>
-
-                </div>
-
-
-
-                <div class="campo">
-
-                    <label for="cidade">
-                        Cidade
-                    </label>
-
-                    <input
-                        type="text"
-                        id="cidade"
-                        placeholder="Digite sua cidade"
-                        required>
-
-                </div>
-
-
-
-                <div class="campo">
-
-                    <label for="mensagem">
-                        Sobre você
-                    </label>
-
-                    <textarea
-                        id="mensagem"
-                        placeholder="Fale um pouco sobre você"></textarea>
-
-                </div>
-
-
-
-                <button type="submit"
-                        class="botao principal">
-
-                    <i class="fa-brands fa-whatsapp"></i>
-
-                    Enviar inscrição
-
-                </button>
-
+                <p id="login-erro"></p>
 
             </form>
 
         </div>
 
-    </section>
+    </div>
 
 
+    <!-- PAINEL -->
 
-    <!-- =================================
-         AMISTOSOS
-    ================================== -->
+    <div id="painel" class="oculto">
 
-    <section id="amistosos"
-             class="tela">
+        <header class="admin-header">
 
+            <div class="admin-logo">
 
-        <button class="voltar"
-                onclick="voltarPainel()">
+                <img
+                    src="../img/escudo.png"
+                    alt="ELITE FC">
 
-            <i class="fa-solid fa-arrow-left"></i>
+                <div>
 
-            Voltar
+                    <strong>ELITE FC</strong>
 
-        </button>
+                    <span>ADMIN</span>
 
+                </div>
 
-        <div class="categoria-conteudo">
-
-
-            <span class="categoria-label">
-                AMISTOSOS
-            </span>
+            </div>
 
 
-            <h2>
-                Marcar amistoso
-            </h2>
+            <button
+                id="logout"
+                class="logout">
+
+                <i class="fa-solid fa-right-from-bracket"></i>
+
+                Sair
+
+            </button>
+
+        </header>
 
 
-            <p class="categoria-descricao">
-
-                Quer jogar contra o ELITE FC?
-
-            </p>
+        <main class="admin-main">
 
 
-            <div class="categoria-card">
+            <div class="titulo">
+
+                <span>PAINEL</span>
+
+                <h1>Visão geral</h1>
+
+                <p>
+                    Acompanhe os acessos ao site do ELITE FC.
+                </p>
+
+            </div>
 
 
-                <div class="icone-grande">
+            <!-- ESTATÍSTICAS -->
 
-                    <i class="fa-solid fa-trophy"></i>
+            <section class="estatisticas">
+
+                <div class="stat-card">
+
+                    <div class="stat-icon">
+
+                        <i class="fa-solid fa-users"></i>
+
+                    </div>
+
+                    <div>
+
+                        <span>Total de visitas</span>
+
+                        <strong id="total-visitas">
+                            0
+                        </strong>
+
+                    </div>
 
                 </div>
 
 
-                <h3>
-                    Vamos jogar?
-                </h3>
+                <div class="stat-card">
+
+                    <div class="stat-icon">
+
+                        <i class="fa-solid fa-calendar-day"></i>
+
+                    </div>
+
+                    <div>
+
+                        <span>Visitas hoje</span>
+
+                        <strong id="visitas-hoje">
+                            0
+                        </strong>
+
+                    </div>
+
+                </div>
 
 
-                <p>
+                <div class="stat-card">
 
-                    Entre em contato conosco
-                    para marcar um amistoso.
+                    <div class="stat-icon">
 
-                </p>
+                        <i class="fa-solid fa-desktop"></i>
 
+                    </div>
 
-                <a href="https://wa.me/5541998045779"
-                   target="_blank"
-                   class="botao whatsapp">
+                    <div>
 
-                    <i class="fa-brands fa-whatsapp"></i>
+                        <span>Desktop</span>
 
-                    Falar conosco
+                        <strong id="desktop">
+                            0
+                        </strong>
 
-                </a>
+                    </div>
 
-
-            </div>
-
-        </div>
-
-    </section>
+                </div>
 
 
+                <div class="stat-card">
 
-    <!-- =================================
-         REDES SOCIAIS
-    ================================== -->
+                    <div class="stat-icon">
 
-    <section id="redes"
-             class="tela">
+                        <i class="fa-solid fa-mobile-screen"></i>
 
+                    </div>
 
-        <button class="voltar"
-                onclick="voltarPainel()">
+                    <div>
 
-            <i class="fa-solid fa-arrow-left"></i>
+                        <span>Celular</span>
 
-            Voltar
+                        <strong id="celular">
+                            0
+                        </strong>
 
-        </button>
+                    </div>
 
+                </div>
 
-        <div class="categoria-conteudo redes-conteudo">
-
-
-            <span class="categoria-label">
-                ACOMPANHE
-            </span>
+            </section>
 
 
-            <h2>
-                Redes sociais
-            </h2>
+            <!-- ÚLTIMAS VISITAS -->
+
+            <section class="tabela-container">
+
+                <div class="tabela-topo">
+
+                    <div>
+
+                        <span>ACESSOS</span>
+
+                        <h2>Últimas visitas</h2>
+
+                    </div>
+
+                    <button id="atualizar">
+
+                        <i class="fa-solid fa-rotate"></i>
+
+                        Atualizar
+
+                    </button>
+
+                </div>
 
 
-            <p class="categoria-descricao">
+                <div class="tabela-scroll">
 
-                Siga o ELITE FC e acompanhe
-                tudo sobre o nosso time.
+                    <table>
 
-            </p>
+                        <thead>
 
+                            <tr>
 
-            <a href="https://www.instagram.com/elite_fcel/"
-               target="_blank"
-               class="instagram">
+                                <th>Data</th>
 
-                <i class="fa-brands fa-instagram"></i>
+                                <th>Dispositivo</th>
 
-            </a>
+                                <th>Navegador</th>
 
+                                <th>Sistema</th>
 
-            <h3>
-                @elite_fcel
-            </h3>
+                                <th>Página</th>
 
+                            </tr>
 
-            <a href="https://www.instagram.com/elite_fcel/"
-               target="_blank"
-               class="botao instagram-botao">
+                        </thead>
 
-                <i class="fa-brands fa-instagram"></i>
+                        <tbody id="lista-visitas">
 
-                Abrir Instagram
+                        </tbody>
 
-            </a>
+                    </table>
 
+                </div>
 
-        </div>
-
-    </section>
+            </section>
 
 
+        </main>
 
-    <!-- =================================
-         RODAPÉ
-    ================================== -->
-
-    <footer>
-
-        <img src="img/escudo.png"
-             alt="ELITE FC">
-
-        <strong>
-            ELITE FC
-        </strong>
-
-        <span>
-            Uma família, um escudo, um objetivo.
-        </span>
-
-    </footer>
+    </div>
 
 
-</main>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 
-
-<script src="script.js"></script>
+    <script src="admin.js"></script>
 
 </body>
 

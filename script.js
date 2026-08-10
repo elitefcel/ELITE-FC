@@ -1,41 +1,105 @@
-/* =====================================
-   CONTROLE DAS TELAS
-===================================== */
+/* ==========================================
+   CONFIGURAÇÃO SUPABASE
+========================================== */
 
-const telas = document.querySelectorAll(".tela");
+const SUPABASE_URL =
+    "https://qtwaftbazoraasvnqrtc.supabase.co";
+
+const SUPABASE_KEY =
+    "sb_publishable_Cpt5RsyhX0Qhno_jF-PPsA_CTiAjF1e";
 
 
-function abrirTela(nome) {
+/* ==========================================
+   ELEMENTOS
+========================================== */
 
-    /*
-     * Esconde todas as telas
-     */
+const paginaPrincipal =
+    document.getElementById(
+        "pagina-principal"
+    );
 
-    telas.forEach(function(tela) {
 
-        tela.classList.remove("ativa");
+const paginas =
+    document.querySelectorAll(
+        ".pagina-categoria"
+    );
+
+
+const botoesCategoria =
+    document.querySelectorAll(
+        ".categoria-card"
+    );
+
+
+const botoesVoltar =
+    document.querySelectorAll(
+        "[data-voltar]"
+    );
+
+
+/* ==========================================
+   ABRIR CATEGORIA
+========================================== */
+
+function abrirCategoria(nome) {
+
+    /* esconder página inicial */
+
+    paginaPrincipal.style.display =
+        "none";
+
+
+    /* esconder todas as categorias */
+
+    paginas.forEach(pagina => {
+
+        pagina.classList.remove(
+            "aberta"
+        );
 
     });
 
 
-    /*
-     * Mostra a tela escolhida
-     */
+    /* abrir categoria */
 
-    const telaEscolhida =
+    const pagina =
         document.getElementById(nome);
 
 
-    if (telaEscolhida) {
+    if (pagina) {
 
-        telaEscolhida.classList.add("ativa");
+        pagina.classList.add(
+            "aberta"
+        );
+
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth"
+        });
 
     }
 
+}
 
-    /*
-     * Volta para o topo
-     */
+
+/* ==========================================
+   VOLTAR PARA INÍCIO
+========================================== */
+
+function voltarInicio() {
+
+    paginas.forEach(pagina => {
+
+        pagina.classList.remove(
+            "aberta"
+        );
+
+    });
+
+
+    paginaPrincipal.style.display =
+        "block";
+
 
     window.scrollTo({
         top: 0,
@@ -45,47 +109,99 @@ function abrirTela(nome) {
 }
 
 
-/* =====================================
-   VOLTAR PARA O PAINEL
-===================================== */
+/* ==========================================
+   CLIQUES NAS CATEGORIAS
+========================================== */
 
-function voltarPainel() {
+botoesCategoria.forEach(botao => {
 
-    abrirTela("painel");
+    botao.addEventListener(
+        "click",
+        () => {
 
-}
+            const secao =
+                botao.dataset.secao;
 
+            abrirCategoria(secao);
 
-/* =====================================
-   ABRIR FORMULÁRIO
-===================================== */
+        }
+    );
 
-function abrirFormulario(posicao) {
-
-    abrirTela("formulario");
-
-
-    /*
-     * Seleciona automaticamente
-     * a posição escolhida
-     */
-
-    const select =
-        document.getElementById("posicao");
+});
 
 
-    if (select) {
+/* ==========================================
+   BOTÕES VOLTAR
+========================================== */
 
-        select.value = posicao;
+botoesVoltar.forEach(botao => {
 
-    }
+    botao.addEventListener(
+        "click",
+        voltarInicio
+    );
 
-}
+});
 
 
-/* =====================================
+/* ==========================================
+   BOTÕES DE VAGAS
+========================================== */
+
+const botoesVagas =
+    document.querySelectorAll(
+        "[data-posicao]"
+    );
+
+
+botoesVagas.forEach(botao => {
+
+    botao.addEventListener(
+        "click",
+        () => {
+
+            const posicao =
+                botao.dataset.posicao;
+
+
+            const select =
+                document.getElementById(
+                    "posicao"
+                );
+
+
+            const formulario =
+                document.getElementById(
+                    "formulario-container"
+                );
+
+
+            if (select) {
+
+                select.value =
+                    posicao;
+
+            }
+
+
+            if (formulario) {
+
+                formulario.scrollIntoView({
+                    behavior: "smooth",
+                    block: "start"
+                });
+
+            }
+
+        }
+    );
+
+});
+
+
+/* ==========================================
    FORMULÁRIO
-===================================== */
+========================================== */
 
 const formulario =
     document.getElementById(
@@ -102,91 +218,58 @@ if (formulario) {
             event.preventDefault();
 
 
-            /*
-             * Pega os dados
-             */
-
             const nome =
                 document.getElementById(
                     "nome"
-                ).value;
+                ).value.trim();
+
 
             const idade =
                 document.getElementById(
                     "idade"
                 ).value;
 
+
             const posicao =
                 document.getElementById(
                     "posicao"
                 ).value;
 
+
             const cidade =
                 document.getElementById(
                     "cidade"
-                ).value;
+                ).value.trim();
+
 
             const mensagem =
                 document.getElementById(
                     "mensagem"
-                ).value;
+                ).value.trim();
 
-
-            /*
-             * Monta a mensagem
-             */
 
             const texto =
 
-                "Olá, ELITE FC!%0A%0A" +
+`Olá, ELITE FC!
 
-                "Gostaria de fazer parte do time.%0A%0A" +
+Quero me candidatar para fazer parte do time.
 
-                "*Nome:* " +
-                encodeURIComponent(nome) +
-                "%0A" +
+Nome: ${nome}
+Idade: ${idade}
+Posição: ${posicao}
+Cidade: ${cidade}
 
-                "*Idade:* " +
-                encodeURIComponent(idade) +
-                "%0A" +
-
-                "*Posição:* " +
-                encodeURIComponent(posicao) +
-                "%0A" +
-
-                "*Cidade:* " +
-                encodeURIComponent(cidade) +
-                "%0A" +
-
-                "*Sobre mim:* " +
-                encodeURIComponent(mensagem);
+Sobre mim:
+${mensagem}`;
 
 
-            /*
-             * Número do WhatsApp
-             */
+            const url =
+                "https://wa.me/5541998045779?text="
+                + encodeURIComponent(texto);
 
-            const numero =
-                "5541998045779";
-
-
-            /*
-             * Link do WhatsApp
-             */
-
-            const whatsapp =
-                "https://wa.me/" +
-                numero +
-                "?text=" +
-                texto;
-
-
-            /*
-             * Abre o WhatsApp
-             */
 
             window.open(
-                whatsapp,
+                url,
                 "_blank"
             );
 
@@ -194,3 +277,120 @@ if (formulario) {
     );
 
 }
+
+
+/* ==========================================
+   CONTADOR DE VISITANTES
+========================================== */
+
+async function registrarVisita() {
+
+    try {
+
+        const userAgent =
+            navigator.userAgent;
+
+
+        let dispositivo =
+            "Computador";
+
+
+        if (
+            /Android/i.test(userAgent)
+        ) {
+
+            dispositivo = "Android";
+
+        }
+        else if (
+            /iPhone|iPad|iPod/i.test(
+                userAgent
+            )
+        ) {
+
+            dispositivo = "iPhone/iPad";
+
+        }
+        else if (
+            /Mobi/i.test(userAgent)
+        ) {
+
+            dispositivo = "Celular";
+
+        }
+
+
+        const dados = {
+
+            dispositivo:
+                dispositivo,
+
+            navegador:
+                userAgent,
+
+            sistema:
+                navigator.platform,
+
+            pagina:
+                window.location.pathname
+
+        };
+
+
+        const resposta =
+            await fetch(
+                `${SUPABASE_URL}/rest/v1/visitas`,
+                {
+
+                    method: "POST",
+
+                    headers: {
+
+                        "Content-Type":
+                            "application/json",
+
+                        "apikey":
+                            SUPABASE_KEY,
+
+                        "Authorization":
+                            `Bearer ${SUPABASE_KEY}`,
+
+                        "Prefer":
+                            "return=minimal"
+
+                    },
+
+                    body:
+                        JSON.stringify(dados)
+
+                }
+            );
+
+
+        if (!resposta.ok) {
+
+            console.log(
+                "Erro ao registrar visita:",
+                await resposta.text()
+            );
+
+        }
+
+    }
+    catch (erro) {
+
+        console.log(
+            "Erro no contador:",
+            erro
+        );
+
+    }
+
+}
+
+
+/* ==========================================
+   REGISTRAR VISITA
+========================================== */
+
+registrarVisita();
