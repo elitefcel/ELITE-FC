@@ -13,10 +13,10 @@ html {
 body {
     background:
         radial-gradient(
-            circle at 50% 25%,
+            circle at 50% 20%,
             #29230d 0%,
-            #11110d 30%,
-            #050505 70%
+            #11110d 32%,
+            #050505 75%
         );
 
     color: white;
@@ -51,7 +51,7 @@ header {
     z-index: 1000;
 
     background:
-        rgba(5, 5, 5, 0.85);
+        rgba(5, 5, 5, 0.88);
 
     backdrop-filter:
         blur(12px);
@@ -510,6 +510,8 @@ header {
 
     justify-content: center;
 
+    gap: 9px;
+
     padding:
         13px 22px;
 
@@ -530,6 +532,8 @@ header {
     cursor: pointer;
 
     transition: 0.3s;
+
+    font-family: inherit;
 }
 
 
@@ -551,43 +555,164 @@ header {
 
 
 /* =========================
-   VAGAS
+   FORMULÁRIO DENTRO DE VAGAS
 ========================= */
 
-.cards-vagas {
-    display: grid;
+.formulario-container {
+    display: none;
 
-    grid-template-columns:
-        repeat(3, 1fr);
+    max-width: 700px;
 
-    gap: 18px;
+    margin: 0 auto;
 }
 
 
-.vaga {
-    position: relative;
+.formulario-container.aberto {
+    display: block;
 
-    padding-top: 45px;
+    animation:
+        aparecer 0.35s ease;
 }
 
 
-.numero {
-    position: absolute;
+.voltar-formulario {
+    border: none;
 
-    top: 18px;
-    right: 20px;
+    background: transparent;
 
-    color:
-        rgba(217, 175, 43, 0.5);
+    color: #999;
 
-    font-size: 12px;
+    cursor: pointer;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 9px;
+
+    font-size: 14px;
+
+    margin-bottom: 35px;
+
+    transition: 0.3s;
+}
+
+
+.voltar-formulario:hover {
+    color: #d9af2b;
+}
+
+
+.formulario-header {
+    text-align: center;
+
+    margin-bottom: 35px;
+}
+
+
+.formulario-header .icone-titulo {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+#formulario-jogador {
+    width: 100%;
+
+    padding: 35px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 10px;
+
+    border-radius: 20px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #15140f,
+            #0b0b09
+        );
+
+    border:
+        1px solid
+        rgba(255, 255, 255, 0.08);
+
+    box-shadow:
+        0 20px 50px
+        rgba(0, 0, 0, 0.3);
+}
+
+
+#formulario-jogador label {
+    color: #d9af2b;
+
+    font-size: 13px;
 
     font-weight: bold;
+
+    margin-top: 8px;
 }
 
 
-.vaga h3 {
-    font-size: 22px;
+#formulario-jogador input,
+#formulario-jogador select,
+#formulario-jogador textarea {
+    width: 100%;
+
+    padding: 15px;
+
+    border-radius: 10px;
+
+    border:
+        1px solid
+        rgba(255, 255, 255, 0.08);
+
+    outline: none;
+
+    background: #090909;
+
+    color: white;
+
+    font-family: inherit;
+
+    font-size: 14px;
+
+    transition: 0.3s;
+}
+
+
+#formulario-jogador input:focus,
+#formulario-jogador select:focus,
+#formulario-jogador textarea:focus {
+    border-color: #d9af2b;
+
+    box-shadow:
+        0 0 0 2px
+        rgba(217, 175, 43, 0.08);
+}
+
+
+#formulario-jogador textarea {
+    resize: vertical;
+
+    min-height: 130px;
+}
+
+
+#formulario-jogador select {
+    cursor: pointer;
+}
+
+
+.enviar-formulario {
+    width: 100%;
+
+    margin-top: 15px;
+
+    font-size: 15px;
 }
 
 
@@ -736,12 +861,13 @@ header {
     }
 
 
-    .cards-vagas {
-        grid-template-columns: 1fr;
-    }
-
-
     .card {
         padding: 25px;
     }
+
+
+    #formulario-jogador {
+        padding: 25px 20px;
+    }
+
 }
